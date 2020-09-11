@@ -8,3 +8,13 @@ def website(request):
 
 	#if request.method == 'POST':
 
+def email(request):
+	sub = request.POST["contactSubject"]
+	mess = request.POST["contactEmail"]
+	recipent_list = request.POST["contactMessage"]
+
+	send_mail(subject=sub,
+            message=recipent_list,
+            from_email=None	,
+            recipient_list=(mess,),)
+	return render(request, 'grey/index.html' )

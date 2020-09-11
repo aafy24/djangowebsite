@@ -511,8 +511,8 @@
    			<h5>Send Us A Message</h5>
 
             <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="inc\sendEmail.php">     			
-
+            <form name="contactForm" id="contactForm" method="post" action="{%url 'email'%}">
+				{% csrf_token %}
                <div class="form-field">
  					   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
                </div>
